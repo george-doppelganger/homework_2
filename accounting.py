@@ -41,7 +41,8 @@ print_melon_sales(melon_tallies)
 
 
 
-print("******************************************")
+print("*" * 42)
+
 f = open("orders-with-sales.txt")
 sales = {'internet':0, 'salesperson':0}
 for line in f:
