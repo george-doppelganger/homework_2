@@ -1,6 +1,10 @@
 HEADER_LENGTH = 80
 
-print("*" * HEADER_LENGTH)
+# melon price table
+melon_prices = { "Musk":       1.15, 
+                 "Hybrid":     1.30, 
+                 "Watermelon": 1.75, 
+                 "Winter":     4.00 }
 
 
 def melon_count(order_file_name):
@@ -13,22 +17,26 @@ def melon_count(order_file_name):
 
     return melon_tallies #this is a dict
 
+def print_melon_sales(mellon_tallies):
+
+
+    for melon_type in melon_tallies:
+        price = melon_prices[melon_type]
+        revenue = price * melon_tallies[melon_type]
+
+
+        print("We sold {} {} melons at {:.2f} each for a total of {:.2f}"
+                .format(melon_tallies[melon_type], melon_type, price, revenue))
+
+
+
+print("*" * HEADER_LENGTH)
+
 melon_tallies = melon_count('orders-by-type.txt')
 
+print_melon_sales(melon_tallies)
 
-melon_prices = { "Musk":       1.15, 
-                 "Hybrid":     1.30, 
-                 "Watermelon": 1.75, 
-                 "Winter":     4.00 }
 
-total_revenue = 0
-for melon_type in melon_tallies:
-    price = melon_prices[melon_type]
-    revenue = price * melon_tallies[melon_type]
-    total_revenue += revenue
-
-    print("We sold {} {} melons at {:.2f} each for a total of {:.2f}"
-            .format(melon_tallies[melon_type], melon_type, price, revenue))
 
 
 print("******************************************")
