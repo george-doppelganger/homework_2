@@ -1,6 +1,6 @@
-DORKY_LINE_LENGTH = 80
+HEADER_LENGTH = 80
 
-print("*" * DORKY_LINE_LENGTH)
+print("*" * HEADER_LENGTH)
 
 
 def melon_count(order_file_name):
@@ -26,7 +26,7 @@ for melon_type in melon_tallies:
     price = melon_prices[melon_type]
     revenue = price * melon_tallies[melon_type]
     total_revenue += revenue
-    # print("We sold %d %s melons at %0.2f each for a total of %0.2f" % (melon_tallies[melon_type], melon_type, price, revenue))
+
     print("We sold {} {} melons at {:.2f} each for a total of {:.2f}"
             .format(melon_tallies[melon_type], melon_type, price, revenue))
 
@@ -42,12 +42,15 @@ for line in f:
         sales['salesperson'] += float(d[3])
 
 
-print("Salespeople generated ${:.2f} in revenue.".format(sales['salesperson']))
-print("Internet sales generated ${:.2f} in revenue.".format(sales['internet']))
+print("Salespeople generated ${:.2f} in revenue."
+        .format(sales['salesperson']))
+
+print("Internet sales generated ${:.2f} in revenue."
+        .format(sales['internet']))
 
 if sales['salesperson'] > sales['internet']:
-    print("Guess there's some value to those salespeople after all.")
+    print("In-person sales exceeded online-generated revenue")
 else:
-    print("Time to fire the sales team! Online sales rule all!")
+    print("Online sales exceeded salesperson-generated revenue")
 
 print("******************************************")
