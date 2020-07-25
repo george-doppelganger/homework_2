@@ -8,6 +8,8 @@ melon_prices = { "Musk":       1.15,
 
 
 def melon_count(order_file_name):
+    """Count how many of each melon type has been ordered"""
+
     melon_tallies = {"Musk":0, "Hybrid":0, "Watermelon":0, "Winter": 0}
     with open(order_file_name) as f:
         for line in f:
@@ -15,10 +17,10 @@ def melon_count(order_file_name):
 
             melon_tallies[melon_type] += int(melon_count)
 
-    return melon_tallies #this is a dict
+    return melon_tallies
 
 def print_melon_sales(mellon_tallies):
-
+    """Prints out total revenue per melon type"""
 
     for melon_type in melon_tallies:
         price = melon_prices[melon_type]
