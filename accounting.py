@@ -28,7 +28,7 @@ def print_melon_sales(mellon_tallies):
 
 
         print("We sold {} {} melons at {:.2f} each for a total of {:.2f}"
-                .format(melon_tallies[melon_type], melon_type, price, revenue))
+                .format(melon_tallies[melon_type], melon_type, melon_price, revenue))
 
 
 
