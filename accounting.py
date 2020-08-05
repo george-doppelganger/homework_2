@@ -23,8 +23,8 @@ def print_melon_sales(mellon_tallies):
     """Prints out total revenue per melon type"""
 
     for melon_type in melon_tallies:
-        price = melon_prices[melon_type]
-        revenue = price * melon_tallies[melon_type]
+        melon_price = melon_prices[melon_type]
+        revenue = melon_price * melon_tallies[melon_type]
 
 
         print("We sold {} {} melons at {:.2f} each for a total of {:.2f}"
